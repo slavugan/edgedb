@@ -9,3 +9,4 @@ Deploying EdgeDB
     :maxdepth: 3
 
     aws_aurora_ecs
+    azure_flexibleserver
