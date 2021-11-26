@@ -92,7 +92,7 @@ Start an EdgeDB container.
          "EDGEDB_SERVER_PASSWORD=$PG_PASSWORD" \
          "EDGEDB_SERVER_BACKEND_DSN=$DSN"
        --environment-variables \
-         EDGEDB_SERVER_GENERATE_SELF_SIGNED_CERT=1 \
+         EDGEDB_SERVER_TLS_CERT_MODE=generate_self_signed \
 
 Persist the SSL certificate. We have configured EdgeDB to generate a self
 signed SSL certificate when it starts. However, if the container is restarted a
