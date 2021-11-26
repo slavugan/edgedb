@@ -49,7 +49,7 @@ Provision a PostgreSQL server.
 .. code-block:: bash
 
    $ PG_SERVER_NAME=postgres-for-edgedb
-   $ PG_PASSWORD=SomeSecret1
+   $ read -s PG_PASSWORD
    $ az postgres flexible-server create \
        --resource-group $GROUP \
        --name $PG_SERVER_NAME \
