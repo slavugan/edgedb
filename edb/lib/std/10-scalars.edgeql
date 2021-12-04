@@ -23,6 +23,8 @@ CREATE PSEUDO TYPE `anytuple`;
 
 CREATE ABSTRACT SCALAR TYPE std::anyscalar;
 
+CREATE ABSTRACT SCALAR TYPE std::anymagnitude EXTENDING std::anyscalar;
+
 CREATE SCALAR TYPE std::bool EXTENDING std::anyscalar;
 
 CREATE SCALAR TYPE std::bytes EXTENDING std::anyscalar;
@@ -33,7 +35,7 @@ CREATE SCALAR TYPE std::str EXTENDING std::anyscalar;
 
 CREATE SCALAR TYPE std::json EXTENDING std::anyscalar;
 
-CREATE SCALAR TYPE std::datetime EXTENDING std::anyscalar;
+CREATE SCALAR TYPE std::datetime EXTENDING std::anyscalar, std::anymagnitude;
 
 CREATE SCALAR TYPE std::duration EXTENDING std::anyscalar;
 
@@ -41,23 +43,24 @@ CREATE ABSTRACT SCALAR TYPE std::anyreal EXTENDING std::anyscalar;
 
 CREATE ABSTRACT SCALAR TYPE std::anyint EXTENDING std::anyreal;
 
-CREATE SCALAR TYPE std::int16 EXTENDING std::anyint;
+CREATE SCALAR TYPE std::int16 EXTENDING std::anyint, std::anymagnitude;
 
-CREATE SCALAR TYPE std::int32 EXTENDING std::anyint;
+CREATE SCALAR TYPE std::int32 EXTENDING std::anyint, std::anymagnitude;
 
-CREATE SCALAR TYPE std::int64 EXTENDING std::anyint;
+CREATE SCALAR TYPE std::int64 EXTENDING std::anyint, std::anymagnitude;
 
 CREATE ABSTRACT SCALAR TYPE std::anyfloat EXTENDING std::anyreal;
 
-CREATE SCALAR TYPE std::float32 EXTENDING std::anyfloat;
+CREATE SCALAR TYPE std::float32 EXTENDING std::anyfloat, std::anymagnitude;
 
-CREATE SCALAR TYPE std::float64 EXTENDING std::anyfloat;
+CREATE SCALAR TYPE std::float64 EXTENDING std::anyfloat, std::anymagnitude;
 
 CREATE ABSTRACT SCALAR TYPE std::anynumeric EXTENDING std::anyreal;
 
-CREATE SCALAR TYPE std::decimal EXTENDING std::anynumeric;
+CREATE SCALAR TYPE std::decimal EXTENDING std::anynumeric, std::anymagnitude;
 
-CREATE SCALAR TYPE std::bigint EXTENDING std::anynumeric, std::anyint;
+CREATE SCALAR TYPE std::bigint
+    EXTENDING std::anynumeric, std::anyint, std::anymagnitude;
 
 CREATE ABSTRACT SCALAR TYPE std::sequence EXTENDING std::int64;
 

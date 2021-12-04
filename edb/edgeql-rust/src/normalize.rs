@@ -264,6 +264,7 @@ fn is_operator(token: &CowToken) -> bool {
         | OpenBrace
         | CloseBrace
         | Dot
+        | DotDot
         | Semicolon
         | Colon
         | Add
